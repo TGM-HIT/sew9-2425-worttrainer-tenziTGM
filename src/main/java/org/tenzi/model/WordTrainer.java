@@ -7,6 +7,9 @@ import java.util.Random;
  * This class provides functionality for managing a list of {@code WordImage} objects
  * and checking user inputs against randomly selected words from the list.
  * It tracks the current word, the total guesses, and the number of correct guesses made by the user.
+ *
+ * @author Timo Enzi
+ * @version 2024-09-25
  */
 public class WordTrainer {
     private List<WordImage> wordList;
@@ -14,11 +17,14 @@ public class WordTrainer {
     private int totalGuesses;
     private int correctGuesses;
 
+    private PersistenceStrategy storage = new JSONStrategy();
+
     /**
      * Constructs a new WordTrainer object.
      */
     public WordTrainer() {
-        //TODO load data
+        this.storage.load(this);
+
     }
 
     /**
@@ -121,5 +127,20 @@ public class WordTrainer {
 
         }
         return isCorrect;
+    }
+
+    /**
+     * Loads a WordTrainer from a file
+     */
+    public void load() {
+        this.storage.load(this);
+    }
+
+
+    /**
+     * Stores this WordTrainer in a file
+     */
+    public void store() {
+        this.storage.store(this);
     }
 }

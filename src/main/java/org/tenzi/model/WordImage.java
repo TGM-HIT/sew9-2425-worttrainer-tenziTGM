@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 /**
  * This class represents a word and its associated URL that points to an image.
  * It provides functionality to set and retrieve the word and the URL, while also validating the URL.
+ *
+ * @author Timo Enzi
+ * @version 2024-09-25
  */
 public class WordImage {
     private String word;

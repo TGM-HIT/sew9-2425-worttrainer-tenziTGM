@@ -5,6 +5,12 @@ import org.tenzi.model.WordImage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * Test Class for WordImage
+ *
+ * @author Timo Enzi
+ * @version 2024-09-25
+ */
 public class WordImageTest {
 
     @Test

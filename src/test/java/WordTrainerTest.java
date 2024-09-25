@@ -9,6 +9,12 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test Class for WordTrainer
+ *
+ * @author Timo Enzi
+ * @version 2024-09-25
+ */
 public class WordTrainerTest {
 
     private WordTrainer wordTrainer;
