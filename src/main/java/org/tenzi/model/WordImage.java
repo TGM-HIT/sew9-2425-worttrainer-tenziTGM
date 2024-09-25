@@ -62,7 +62,7 @@ public class WordImage {
      * @throws IllegalArgumentException if the URL is invalid or empty.
      */
     public void setWordUrl(String wordUrl) {
-        if (!isValidUrl(wordUrl) || wordUrl.isEmpty()) {
+        if (wordUrl == null || !isValidUrl(wordUrl) || wordUrl.isEmpty()) {
             throw new IllegalArgumentException("Url is invalid or empty");
         }
         this.wordUrl = wordUrl;
@@ -75,13 +75,6 @@ public class WordImage {
      * @return true if the URL is valid, otherwise false.
      */
     public static boolean isValidUrl(String url) {
-        String URL_REGEX = "^(https?://)?(www\\.)?([a-zA-Z0-9-]+\\.[a-zA-Z]{2,})(/.*)?$";
-        Pattern pattern = Pattern.compile(URL_REGEX);
-
-        if (!pattern.matcher(url).matches()) {
-            return false;
-        }
-
         try {
             new URL(url); // Check if the URL can be constructed properly.
             return true;
