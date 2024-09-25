@@ -36,10 +36,11 @@ public class JSONStrategy implements PersistenceStrategy {
     public void load(WordTrainer wordTrainer) {
         Gson gson = new Gson();
         try (FileReader reader = new FileReader("wordtrainer_data.json")) {
-            // Deserialize the WordTrainer object from the JSON file
+
             WordTrainer loaded = gson.fromJson(reader, WordTrainer.class);
 
-            // Update the provided wordTrainer instance with the loaded data
+            System.out.println(loaded.getCorrectGuesses());
+
             wordTrainer.setWordList(loaded.getWordList());
             wordTrainer.setCorrectGuesses(loaded.getCorrectGuesses());
             wordTrainer.setTotalGuesses(loaded.getTotalGuesses());

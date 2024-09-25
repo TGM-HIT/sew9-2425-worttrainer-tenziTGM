@@ -1,0 +1,14 @@
+{
+  "wordList": [
+    {
+      "word": "Hund",
+      "wordUrl": "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg"
+    },
+    {
+      "word": "Katze",
+      "wordUrl": "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
+    }
+  ],
+  "totalGuesses": 12,
+  "correctGuesses": 5
+}

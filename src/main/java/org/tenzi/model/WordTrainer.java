@@ -1,5 +1,6 @@
 package org.tenzi.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -13,18 +14,17 @@ import java.util.Random;
  */
 public class WordTrainer {
     private List<WordImage> wordList;
-    private int currentWordIndex = -1;
-    private int totalGuesses;
-    private int correctGuesses;
+    private transient int currentWordIndex = -1;
+    private int totalGuesses = 0;
+    private int correctGuesses = 0;
 
-    private PersistenceStrategy storage = new JSONStrategy();
+    private transient PersistenceStrategy storage = new JSONStrategy();
 
     /**
      * Constructs a new WordTrainer object.
      */
     public WordTrainer() {
-        this.storage.load(this);
-
+        wordList = new ArrayList<>();
     }
 
     /**
