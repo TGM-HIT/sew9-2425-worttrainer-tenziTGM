@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JSONStrategyTest {
 
     @Test
+    @DisplayName("Load method is tested")
     void test() {
         WordTrainer wordTrainer = new WordTrainer();
         wordTrainer.load();
