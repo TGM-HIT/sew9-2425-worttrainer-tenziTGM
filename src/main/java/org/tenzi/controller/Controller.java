@@ -45,9 +45,10 @@ public class Controller implements ActionListener {
 
         switch (actionCommand) {
             case "textInput":
-
-                this.wordTrainer.checkInput(panel.getInput());
-                this.panel.showNextWord();
+                if(this.wordTrainer.checkInput(panel.getInput())) {
+                    this.panel.showNextWord();
+            }
+                this.panel.next();
                 break;
 
             case "saveGame":

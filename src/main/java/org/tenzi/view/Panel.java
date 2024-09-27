@@ -4,7 +4,9 @@ import org.tenzi.controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 /**
@@ -21,6 +23,7 @@ public class Panel extends JPanel {
     private JLabel correctGuesses, totalGuesses, picture;
     private JButton saveGame, loadGame;
     private JTextField input;
+    private String url;
 
     /**
      * Constructor for the Panel class.
@@ -31,6 +34,7 @@ public class Panel extends JPanel {
      */
     public Panel(Controller c) {
         this.controller = c;
+        this.url = controller.getCurrentUrl();
         this.setLayout(new BorderLayout());
 
         JPanel input = new JPanel();
@@ -114,5 +118,11 @@ public class Panel extends JPanel {
         this.picture = new JLabel(new ImageIcon(image));
         center.add(picture);
         this.add(center, BorderLayout.CENTER);
+    }
+
+    public void next() {
+        this.input.setText("");
+        this.correctGuesses.setText(String.valueOf(this.controller.getCorrectGuesses()));
+        this.totalGuesses.setText(String.valueOf(this.controller.getTotalGuesses()));
     }
 }
